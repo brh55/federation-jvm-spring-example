@@ -10,6 +10,7 @@ import com.apollographql.federation.graphqljava.tracing.FederatedTracingInstrume
 @Configuration
 public class GraphQLConfiguration {
 
+  // Add federated tracing to the GraphQL server
   @Bean
   public FederatedTracingInstrumentation federatedTracingInstrumentation() {
     return new FederatedTracingInstrumentation();
