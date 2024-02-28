@@ -4,9 +4,16 @@ import com.apollographql.federation.graphqljava.Federation;
 import org.springframework.boot.autoconfigure.graphql.GraphQlSourceBuilderCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import com.apollographql.federation.graphqljava.tracing.FederatedTracingInstrumentation;
+
 
 @Configuration
 public class GraphQLConfiguration {
+
+  @Bean
+  public FederatedTracingInstrumentation federatedTracingInstrumentation() {
+    return new FederatedTracingInstrumentation();
+  }
 
   @Bean
   public GraphQlSourceBuilderCustomizer federationTransform() {
